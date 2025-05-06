@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStudio - Профессиональное создание сайтов</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">WebStudio</div>
+            <nav>
+                <a href="#services">Услуги</a>
+                <a href="#portfolio">Портфолио</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <a href="#form" class="btn">Заказать сайт</a>
+        </div>
+    </header>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <div class="container">
+            <h1>Профессиональные сайты под ключ</h1>
+            <p>От лендингов до интернет-магазинов с гарантией результата</p>
+            <a href="#form" class="btn btn-large">Оставить заявку</a>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="features">
+        <div class="container">
+            <h2>Почему выбирают нас</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Скорость</h3>
+                    <p>Готовый сайт за 7-14 дней</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-key"></i>
+                    <h3>Под ключ</h3>
+                    <p>Дизайн, верстка, наполнение и SEO</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>Поддержка</h3>
+                    <p>Гарантия и помощь после запуска</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Адаптивность</h3>
+                    <p>Идеально на всех устройствах</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <h3>Лендинг</h3>
+                    <p>от 20 000 ₽</p>
+                    <ul>
+                        <li>1 уникальный дизайн</li>
+                        <li>Адаптивная верстка</li>
+                        <li>Наполнение контентом</li>
+                    </ul>
+                    <a href="#form" class="btn btn-outline">Заказать</a>
+                </div>
+                <div class="service popular">
+                    <div class="popular-badge">Популярно</div>
+                    <h3>Корпоративный сайт</h3>
+                    <p>от 50 000 ₽</p>
+                    <ul>
+                        <li>5+ страниц</li>
+                        <li>CMS система</li>
+                        <li>SEO оптимизация</li>
+                    </ul>
+                    <a href="#form" class="btn">Заказать</a>
+                </div>
+                <div class="service">
+                    <h3>Интернет-магазин</h3>
+                    <p>от 80 000 ₽</p>
+                    <ul>
+                        <li>Каталог товаров</li>
+                        <li>Корзина и оплата</li>
+                        <li>Личный кабинет</li>
+                    </ul>
+                    <a href="#form" class="btn btn-outline">Заказать</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Портфолио -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Наши работы</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Пример сайта">
+                    <h3>Лендинг для студии йоги</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Пример сайта">
+                    <h3>Сайт для строительной компании</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Пример сайта">
+                    <h3>Интернет-магазин косметики</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма -->
+    <section id="form" class="form-section">
+        <div class="container">
+            <h2>Оставьте заявку</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Телефон">
+                <select>
+                    <option value="" disabled selected>Выберите услугу</option>
+                    <option value="landing">Лендинг</option>
+                    <option value="corporate">Корпоративный сайт</option>
+                    <option value="shop">Интернет-магазин</option>
+                </select>
+                <textarea placeholder="Ваши пожелания"></textarea>
+                <button type="submit" class="btn">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer id="contacts" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>WebStudio</h3>
+                    <p>Профессиональное создание сайтов с 2020 года</p>
+                </div>
+                <div class="footer-contacts">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-phone"></i> +7 (123) 456-78-90</p>
+                    <p><i class="fas fa-envelope"></i> info@webstudio.ru</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; WebStudio, 2024. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
