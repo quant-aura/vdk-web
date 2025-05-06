@@ -167,12 +167,15 @@
                     e.preventDefault();
                 
                     const token = "7547931373:AAFMT98QE_Zo5drmzRxtV3yx8CZgtmPhKZA";
-                    const chatId = "1828174768";
+                    const chatIds = ["1828174768", "417892922"];
                     const text = `Новая заявка!\nИмя: ${this.name.value}\nEmail: ${this.email.value}\nТелефон: ${this.phone.value}\nУслуга: ${this.service.value}\nСообщение: ${this.message.value}`;
                 
-                    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
-                        .then(() => alert('Заявка отправлена!'))
-                        .catch(() => alert('Ошибка! Попробуйте позже.'));
+                    chatIds.forEach(chatId => {
+                        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
+                            .then(() => console.log(`Заявка отправлена в чат ${chatId}`))
+                            .catch(() => console.error(`Ошибка при отправке в чат ${chatId}`));
+                    });
+                alert('Заявка отправлена!');
                 });
             </script>
         </div>
