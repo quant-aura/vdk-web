@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebStudio - Профессиональное создание сайтов</title>
-    <link rel="stylesheet" href="style.css">
+    <title>VDK Web - Лендинги и интернет-магазины для Вашего Дела</title>
+    <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="window.scrollTo(0, sessionStorage.getItem('scrollPosition')) || 0">
+    <script>
+        window.addEventListener('beforeunload', function() {
+            sessionStorage.setItem('scrollPosition', window.scrollY);
+        });
+    </script>
     <!-- Шапка -->
     <header class="header">
         <div class="container">
-            <div class="logo">WebStudio</div>
+            <div class="logo">VDK WEB</div>
             <nav>
                 <a href="#services">Услуги</a>
                 <a href="#portfolio">Портфолио</a>
@@ -22,10 +27,28 @@
         </div>
     </header>
 
+    <script>
+        // Открытие/закрытие меню
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.main-nav').classList.remove('active');
+                document.querySelector('.menu-toggle i').classList.add('fa-bars');
+                document.querySelector('.menu-toggle i').classList.remove('fa-times');
+            });
+        });
+    </script>
+
     <!-- Hero секция -->
     <section class="hero">
         <div class="container">
-            <h1>Профессиональные сайты под ключ</h1>
+            <h1>Ваш просторный уголок в интернете</h1>
             <p>От лендингов до интернет-магазинов с гарантией результата</p>
             <a href="#form" class="btn btn-large">Оставить заявку</a>
         </div>
@@ -39,13 +62,13 @@
                 <div class="feature">
                     <i class="fas fa-bolt"></i>
                     <h3>Скорость</h3>
-                    <p>Готовый сайт за 7-14 дней</p>
+                    <p>Готовый сайт за 2-3 недели</p>
                 </div>
-                <div class="feature">
+                <!-- <div class="feature">
                     <i class="fas fa-key"></i>
                     <h3>Под ключ</h3>
                     <p>Дизайн, верстка, наполнение и SEO</p>
-                </div>
+                </div> -->
                 <div class="feature">
                     <i class="fas fa-headset"></i>
                     <h3>Поддержка</h3>
@@ -67,9 +90,9 @@
             <div class="services-grid">
                 <div class="service">
                     <h3>Лендинг</h3>
-                    <p>от 20 000 ₽</p>
+                    <p>от 15 000 ₽</p>
                     <ul>
-                        <li>1 уникальный дизайн</li>
+                        <li>Уникальный дизайн</li>
                         <li>Адаптивная верстка</li>
                         <li>Наполнение контентом</li>
                     </ul>
@@ -77,12 +100,12 @@
                 </div>
                 <div class="service popular">
                     <div class="popular-badge">Популярно</div>
-                    <h3>Корпоративный сайт</h3>
-                    <p>от 50 000 ₽</p>
+                    <h3>Телеграм-бот</h3>
+                    <p>от 10 000 ₽</p>
                     <ul>
-                        <li>5+ страниц</li>
-                        <li>CMS система</li>
-                        <li>SEO оптимизация</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
                     </ul>
                     <a href="#form" class="btn">Заказать</a>
                 </div>
@@ -107,11 +130,11 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <img src="https://via.placeholder.com/400x300" alt="Пример сайта">
-                    <h3>Лендинг для студии йоги</h3>
+                    <h3>Лендинг для кофейни</h3>
                 </div>
                 <div class="portfolio-item">
                     <img src="https://via.placeholder.com/400x300" alt="Пример сайта">
-                    <h3>Сайт для строительной компании</h3>
+                    <h3>Бот для образовательной студии</h3>
                 </div>
                 <div class="portfolio-item">
                     <img src="https://via.placeholder.com/400x300" alt="Пример сайта">
@@ -132,7 +155,7 @@
                 <select>
                     <option value="" disabled selected>Выберите услугу</option>
                     <option value="landing">Лендинг</option>
-                    <option value="corporate">Корпоративный сайт</option>
+                    <option value="corporate">Телеграм-бот</option>
                     <option value="shop">Интернет-магазин</option>
                 </select>
                 <textarea placeholder="Ваши пожелания"></textarea>
@@ -146,8 +169,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <h3>WebStudio</h3>
-                    <p>Профессиональное создание сайтов с 2020 года</p>
+                    <h3>VDK Web</h3>
+                    <p>Вашему Делу достойный вид</p>
                 </div>
                 <div class="footer-contacts">
                     <h3>Контакты</h3>
@@ -164,7 +187,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; WebStudio, 2024. Все права защищены.</p>
+                <p>&copy; VDK Web, 2025</p>
             </div>
         </div>
     </footer>
