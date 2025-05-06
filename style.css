@@ -1,7 +1,7 @@
 /* Базовые стили */
 :root {
-    --primary: #2563EB;
-    --primary-dark: #1D4ED8;
+    --primary: #008000;
+    --primary-dark: #4B0082;
     --text: #333333;
     --text-light: #666666;
     --light: #f8fafc;
@@ -20,6 +20,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: var(--text);
     line-height: 1.6;
+    padding-top: 70px; /* Отступ для фиксированной шапки */
 }
 
 .container {
@@ -95,38 +96,84 @@ a {
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
+    top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px 20px;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--primary-dark);
+    z-index: 1001;
 }
 
-nav a {
-    margin: 0 15px;
+/* Основная навигация */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a {
     font-weight: 600;
+    transition: color 0.3s;
+    padding: 5px 0;
 }
 
-nav a:hover {
-    color: var(--primary);
+.main-nav a:hover {
+    color: var(--primary-dark);
 }
+
+/* Кнопка заказа (видна всегда)
+.order-btn {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+Гамбургер-меню
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 5px;
+} */
 
 /* Hero секция */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://img.freepik.com/free-vector/cityscape-flat-building-skyline-vector-background-urban-business-skyscraper-panorama-city-scape-with-office-downtown-outdoor-game-illustration-blue-panoramic-metropolis-environment-concept_107791-23317.jpg?ga=GA1.1.2009605405.1746504351&semt=ais_hybrid&w=740') 
+                no-repeat center center/cover;
     color: var(--white);
     text-align: center;
-    padding: 180px 20px 100px;
+    padding: 120px 20px 80px;
+    margin-top: 0px;
+    min-height: 70vh;
+    background-attachment: fixed;
+    background-position: center bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 120px 20px 80px;
+        min-height: 80vh;
+        background-attachment: scroll;
+    }
 }
 
 .hero h1 {
@@ -168,7 +215,7 @@ nav a:hover {
 
 .feature i {
     font-size: 2.5rem;
-    color: var(--primary);
+    color: var(--primary-dark);
     margin-bottom: 20px;
 }
 
@@ -210,7 +257,7 @@ nav a:hover {
 }
 
 .service h3 {
-    color: var(--primary);
+    color: var(--primary-dark);
 }
 
 .service p {
@@ -364,20 +411,84 @@ nav a:hover {
 
 /* Адаптивность */
 @media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+
+    /* Шапка */
     .header .container {
+        padding: 10px 15px;
+    }
+
+    /* Показываем кнопку меню */
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Скрываем основную навигацию */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--white);
         flex-direction: column;
-        padding: 15px;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        padding-top: 70px;
     }
-
-    nav {
-        margin: 15px 0;
+    
+    /* Показываем меню при открытии */
+    .main-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
-
+    
+    /* Кнопка заказа в меню */
+    .main-nav .order-btn {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    
+    /* Hero секция */
     .hero {
-        padding: 150px 20px 80px;
+        padding: 100px 20px 60px;
     }
-
+    
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+    
+    .features,
+    .services,
+    .portfolio,
+    .form-section {
+        padding: 60px 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+    
+    .btn-large {
+        padding: 12px 24px;
     }
 }
