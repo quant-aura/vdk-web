@@ -148,19 +148,33 @@
     <section id="form" class="form-section">
         <div class="container">
             <h2>Оставьте заявку</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Телефон">
-                <select>
+            <form id="tg-form" class="contact-form">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Телефон">
+                <select name="service">
                     <option value="" disabled selected>Выберите услугу</option>
-                    <option value="landing">Лендинг</option>
-                    <option value="corporate">Телеграм-бот</option>
-                    <option value="shop">Интернет-магазин</option>
+                    <option value="Лендинг">Лендинг</option>
+                    <option value="Корпоративный сайт">Корпоративный сайт</option>
+                    <option value="Интернет-магазин">Интернет-магазин</option>
                 </select>
-                <textarea placeholder="Ваши пожелания"></textarea>
+                <textarea name="message" placeholder="Ваши пожелания"></textarea>
                 <button type="submit" class="btn">Отправить заявку</button>
             </form>
+            
+            <script>
+                document.getElementById('tg-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                
+                    const token = "7547931373:AAFMT98QE_Zo5drmzRxtV3yx8CZgtmPhKZA";
+                    const chatId = "1828174768";
+                    const text = `Новая заявка!\nИмя: ${this.name.value}\nEmail: ${this.email.value}\nТелефон: ${this.phone.value}\nУслуга: ${this.service.value}\nСообщение: ${this.message.value}`;
+                
+                    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
+                        .then(() => alert('Заявка отправлена!'))
+                        .catch(() => alert('Ошибка! Попробуйте позже.'));
+                });
+            </script>
         </div>
     </section>
 
