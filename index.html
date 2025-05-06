@@ -1,212 +1,234 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VDK Web - Лендинги и интернет-магазины для Вашего Дела</title>
-    <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body onload="window.scrollTo(0, sessionStorage.getItem('scrollPosition')) || 0">
+    <link rel="stylesheet" href="style2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    onload="window.scrollTo(0, sessionStorage.getItem('scrollPosition')) || 0"
+  >
     <script>
-        window.addEventListener('beforeunload', function() {
-            sessionStorage.setItem('scrollPosition', window.scrollY);
-        });
+      window.addEventListener("beforeunload", function () {
+        sessionStorage.setItem("scrollPosition", window.scrollY);
+      });
     </script>
     <!-- Шапка -->
     <header class="header">
-        <div class="container">
-            <div class="logo">VDK WEB</div>
-            <nav>
-                <a href="#services">Услуги</a>
-                <a href="#portfolio">Портфолио</a>
-                <a href="#contacts">Контакты</a>
-            </nav>
-            <a href="#form" class="btn">Заказать сайт</a>
-        </div>
+      <div class="container">
+        <div class="logo">Akxmai Studio</div>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        <nav class="main-nav">
+          <a href="#services">Услуги</a>
+          <a href="#process">Процесс</a>
+          <a href="#portfolio">Кейсы</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <a href="#form" class="btn">Обсудить проект</a>
+      </div>
     </header>
 
     <script>
-        // Открытие/закрытие меню
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.main-nav').classList.toggle('active');
-            this.querySelector('i').classList.toggle('fa-bars');
-            this.querySelector('i').classList.toggle('fa-times');
+      // Открытие/закрытие меню
+      document
+        .querySelector(".menu-toggle")
+        .addEventListener("click", function () {
+          document.querySelector(".main-nav").classList.toggle("active");
+          this.querySelector("i").classList.toggle("fa-bars");
+          this.querySelector("i").classList.toggle("fa-times");
         });
-        
-        // Закрытие меню при клике на ссылку
-        document.querySelectorAll('.main-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.main-nav').classList.remove('active');
-                document.querySelector('.menu-toggle i').classList.add('fa-bars');
-                document.querySelector('.menu-toggle i').classList.remove('fa-times');
-            });
+
+      // Закрытие меню при клике на ссылку
+      document.querySelectorAll(".main-nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.querySelector(".main-nav").classList.remove("active");
+          document.querySelector(".menu-toggle i").classList.add("fa-bars");
+          document.querySelector(".menu-toggle i").classList.remove("fa-times");
         });
+      });
     </script>
 
     <!-- Hero секция -->
     <section class="hero">
-        <div class="container">
-            <h1>Ваш просторный уголок в интернете</h1>
-            <p>От лендингов до интернет-магазинов с гарантией результата</p>
-            <a href="#form" class="btn btn-large">Оставить заявку</a>
+      <div class="container">
+        <h1>Превращаем ваши идеи в цифровые решения</h1>
+        <p class="subtitle">Дизайн, код и немного магии ✨</p>
+        <div class="cta-buttons">
+          <a href="#form" class="btn btn-large">Оставить заявку</a>
         </div>
+      </div>
     </section>
 
     <!-- Преимущества -->
     <section class="features">
-        <div class="container">
-            <h2>Почему выбирают нас</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Скорость</h3>
-                    <p>Готовый сайт за 2-3 недели</p>
-                </div>
-                <!-- <div class="feature">
+      <div class="container">
+        <h2>Почему выбирают нас</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <i class="fas fa-bolt"></i>
+            <h3>Скорость</h3>
+            <p>Готовый сайт за 2-3 недели</p>
+          </div>
+          <!-- <div class="feature">
                     <i class="fas fa-key"></i>
                     <h3>Под ключ</h3>
                     <p>Дизайн, верстка, наполнение и SEO</p>
                 </div> -->
-                <div class="feature">
-                    <i class="fas fa-headset"></i>
-                    <h3>Поддержка</h3>
-                    <p>Гарантия и помощь после запуска</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Адаптивность</h3>
-                    <p>Идеально на всех устройствах</p>
-                </div>
-            </div>
+          <div class="feature">
+            <i class="fas fa-headset"></i>
+            <h3>Поддержка</h3>
+            <p>Гарантия и помощь после запуска</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Адаптивность</h3>
+            <p>Идеально на всех устройствах</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Услуги -->
     <section id="services" class="services">
-        <div class="container">
-            <h2>Наши услуги</h2>
-            <div class="services-grid">
-                <div class="service">
-                    <h3>Лендинг</h3>
-                    <p>от 15 000 ₽</p>
-                    <ul>
-                        <li>Уникальный дизайн</li>
-                        <li>Адаптивная верстка</li>
-                        <li>Наполнение контентом</li>
-                    </ul>
-                    <a href="#form" class="btn btn-outline">Заказать</a>
-                </div>
-                <div class="service popular">
-                    <div class="popular-badge">Популярно</div>
-                    <h3>Телеграм-бот</h3>
-                    <p>от 10 000 ₽</p>
-                    <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                    </ul>
-                    <a href="#form" class="btn">Заказать</a>
-                </div>
-                <div class="service">
-                    <h3>Интернет-магазин</h3>
-                    <p>от 80 000 ₽</p>
-                    <ul>
-                        <li>Каталог товаров</li>
-                        <li>Корзина и оплата</li>
-                        <li>Личный кабинет</li>
-                    </ul>
-                    <a href="#form" class="btn btn-outline">Заказать</a>
-                </div>
-            </div>
+      <div class="container">
+        <h2>Наши решения</h2>
+        <div class="services-grid">
+          <div class="service">
+            <h3>Лендинг</h3>
+            <p class="price">от 15 000 ₽</p>
+            <ul>
+              <li>Конверсия от 9%</li>
+              <li>SEO-оптимизация</li>
+              <li>Гарантия 1 год</li>
+            </ul>
+            <a href="#form" class="btn">Обсудить проект</a>
+          </div>
+          <div class="service popular">
+            <div class="popular-badge">Хит</div>
+            <h3>Интернет-магазин</h3>
+            <p class="price">от 80 000 ₽</p>
+            <ul>
+              <li>До 10000 товаров</li>
+              <li>Онлайн-оплата</li>
+              <li>Мобильное приложение</li>
+            </ul>
+            <a href="#form" class="btn">Обсудить проект</a>
+          </div>
+          <div class="service">
+            <h3>Телеграм-бот</h3>
+            <p class="price">от 8 000 ₽</p>
+            <ul>
+              <li>Автоматизация 24/7</li>
+              <li>Мгновенные уведомления</li>
+              <li>Персональный подход</li>
+            </ul>
+            <a href="#form" class="btn">Обсудить проект</a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Портфолио -->
     <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>Наши работы</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Пример сайта">
-                    <h3>Лендинг для кофейни</h3>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Пример сайта">
-                    <h3>Бот для образовательной студии</h3>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Пример сайта">
-                    <h3>Интернет-магазин косметики</h3>
-                </div>
-            </div>
+      <div class="container">
+        <h2>Наши работы</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/400x300" alt="Пример сайта" />
+            <h3>Лендинг для кофейни</h3>
+          </div>
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/400x300" alt="Пример сайта" />
+            <h3>Бот для образовательной студии</h3>
+          </div>
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/400x300" alt="Пример сайта" />
+            <h3>Интернет-магазин косметики</h3>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Форма -->
     <section id="form" class="form-section">
-        <div class="container">
-            <h2>Оставьте заявку</h2>
-            <form id="tg-form" class="contact-form">
-                <input type="text" name="name" placeholder="Ваше имя" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="tel" name="phone" placeholder="Телефон">
-                <select name="service">
-                    <option value="" disabled selected>Выберите услугу</option>
-                    <option value="Лендинг">Лендинг</option>
-                    <option value="Телеграм-бот">Телеграм-бот</option>
-                    <option value="Интернет-магазин">Интернет-магазин</option>
-                </select>
-                <textarea name="message" placeholder="Ваши пожелания"></textarea>
-                <button type="submit" class="btn">Отправить заявку</button>
-            </form>
-            
-            <script>
-                document.getElementById('tg-form').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                
-                    const token = "7547931373:AAFMT98QE_Zo5drmzRxtV3yx8CZgtmPhKZA";
-                    const chatIds = ["1828174768", "417892922"];
-                    const text = `Новая заявка!\nИмя: ${this.name.value}\nEmail: ${this.email.value}\nТелефон: ${this.phone.value}\nУслуга: ${this.service.value}\nСообщение: ${this.message.value}`;
-                
-                    chatIds.forEach(chatId => {
-                        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
-                            .then(() => console.log(`Заявка отправлена в чат ${chatId}`))
-                            .catch(() => console.error(`Ошибка при отправке в чат ${chatId}`));
-                    });
-                alert('Заявка отправлена!');
-                });
-            </script>
-        </div>
+      <div class="container">
+        <h2>Оставьте заявку</h2>
+        <form id="tg-form" class="contact-form">
+          <input type="text" name="name" placeholder="Ваше имя" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="tel" name="phone" placeholder="Телефон" />
+          <select name="service">
+            <option value="" disabled selected>Выберите услугу</option>
+            <option value="Лендинг">Лендинг</option>
+            <option value="Телеграм-бот">Телеграм-бот</option>
+            <option value="Интернет-магазин">Интернет-магазин</option>
+          </select>
+          <textarea name="message" placeholder="Ваши пожелания"></textarea>
+          <button type="submit" class="btn">Отправить заявку</button>
+        </form>
+
+        <script>
+          document
+            .getElementById("tg-form")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              const token = "7547931373:AAFMT98QE_Zo5drmzRxtV3yx8CZgtmPhKZA";
+              const chatIds = ["1828174768", "417892922"];
+              const text = `Новая заявка!\nИмя: ${this.name.value}\nEmail: ${this.email.value}\nТелефон: ${this.phone.value}\nУслуга: ${this.service.value}\nСообщение: ${this.message.value}`;
+
+              chatIds.forEach((chatId) => {
+                fetch(
+                  `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
+                    text
+                  )}`
+                )
+                  .then(() => console.log(`Заявка отправлена в чат ${chatId}`))
+                  .catch(() =>
+                    console.error(`Ошибка при отправке в чат ${chatId}`)
+                  );
+              });
+              alert("Заявка отправлена!");
+            });
+        </script>
+      </div>
     </section>
 
     <!-- Подвал -->
     <footer id="contacts" class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h3>VDK Web</h3>
-                    <p>Вашему Делу достойный вид</p>
-                </div>
-                <div class="footer-contacts">
-                    <h3>Контакты</h3>
-                    <p><i class="fas fa-phone"></i> +7 (123) 456-78-90</p>
-                    <p><i class="fas fa-envelope"></i> info@webstudio.ru</p>
-                </div>
-                <div class="footer-social">
-                    <h3>Мы в соцсетях</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-vk"></i></a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <h3>Akxmai Studio</h3>
+            <p>Вашему Делу достойный вид</p>
+          </div>
+          <div class="footer-contacts">
+            <h3>Контакты</h3>
+            <p><i class="fas fa-phone"></i> +7 (995) 066-34-55</p>
+            <p><i class="fas fa-envelope"></i> s.tyaglov@akamai.uz</p>
+          </div>
+          <div class="footer-social">
+            <h3>Мы в соцсетях</h3>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-telegram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+              <a href="#"><i class="fab fa-vk"></i></a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; VDK Web, 2025</p>
-            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; Akxmai Studio, 2025</p>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
